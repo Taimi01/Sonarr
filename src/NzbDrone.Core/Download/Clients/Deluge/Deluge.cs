@@ -178,6 +178,11 @@ namespace NzbDrone.Core.Download.Clients.Deluge
                     torrent.Ratio >= torrent.StopRatio &&
                     torrent.State == DelugeTorrentStatus.Paused;
 
+                if (Settings.MoveFiles)
+                {
+                    item.CanMoveFiles = true;
+                }
+
                 items.Add(item);
             }
 

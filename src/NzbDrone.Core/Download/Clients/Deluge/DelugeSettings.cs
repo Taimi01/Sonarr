@@ -58,6 +58,9 @@ namespace NzbDrone.Core.Download.Clients.Deluge
 
         [FieldDefinition(9, Label = "Use SSL", Type = FieldType.Checkbox)]
         public bool UseSsl { get; set; }
+        
+        [FieldDefinition(12, Label = "Move files", Type = FieldType.Checkbox, Advanced = true, HelpText = "Moves the files when imported instead of copying/hardlinking (CAUTION: Do not enable if you want to seed the files.)")]
+        public bool MoveFiles { get; set; }
 
         public NzbDroneValidationResult Validate()
         {
